@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoval | Taste the Perfection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316', // Primary Orange
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fb923c;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ea580c;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-serif text-3xl font-bold text-orange-500 tracking-tight">Restoval<span class="text-gray-800">.</span></a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-orange-500 font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-orange-500 font-medium transition-colors">About Us</a>
+                    <a href="#menu" class="text-gray-600 hover:text-orange-500 font-medium transition-colors">Our Menu</a>
+                    <a href="#contact" class="text-gray-600 hover:text-orange-500 font-medium transition-colors">Contact</a>
+                </nav>
+
+                <!-- Book a Table Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Book a Table
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-orange-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#home" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-md">About Us</a>
+                <a href="#menu" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-md">Our Menu</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-orange-50 overflow-hidden">
+        <!-- Decorative background elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-orange-200 opacity-20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-orange-300 opacity-20 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="text-center lg:text-left z-10">
+                    <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm mb-4 block">Welcome to Restoval</span>
+                    <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
+                        Experience the <br/>
+                        <span class="text-orange-500">Joy of Food</span>
+                    </h1>
+                    <p class="text-gray-600 text-lg mb-8 max-w-lg mx-auto lg:mx-0">
+                        Discover culinary excellence with our carefully crafted dishes, made from the freshest ingredients. At Restoval, every meal is a celebration.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#menu" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-lg hover:shadow-orange-500/30 text-center">
+                            Explore Menu
+                        </a>
+                        <a href="#contact" class="bg-white border-2 border-orange-200 text-orange-600 hover:border-orange-500 hover:bg-orange-50 px-8 py-3.5 rounded-full font-medium transition-all text-center">
+                            Reserve Table
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="relative z-10 mt-12 lg:mt-0 flex justify-center">
+                    <!-- Main Image -->
+                    <div class="relative rounded-full overflow-hidden border-8 border-white shadow-2xl w-72 h-72 sm:w-96 sm:h-96 lg:w-[500px] lg:h-[500px] transform hover:rotate-2 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Delicious fresh salad bowl" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Secondary Overlapping Image -->
+                    <div class="absolute top-0 right-0 sm:right-4 lg:-right-4 rounded-full overflow-hidden border-4 border-white shadow-xl w-28 h-28 sm:w-36 sm:h-36 lg:w-48 lg:h-48 transform hover:scale-110 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Delicious food plate" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Floating badge -->
+                    <div class="absolute bottom-4 left-0 sm:bottom-10 sm:left-4 lg:-left-6 bg-white p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                        <div class="bg-orange-100 p-2 rounded-full">
+                            <span class="text-orange-500 text-lg sm:text-xl">⭐</span>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-medium">Top Rated</p>
+                            <p class="text-xs sm:text-sm font-bold text-gray-800">4.9/5 stars</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Dishes / Menu Preview -->
+    <section id="menu" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm mb-2 block">Our Menu</span>
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Signature Dishes</h2>
+                <p class="text-gray-600">A curated selection of our most loved and vibrant dishes, prepared with passion by our master chefs.</p>
+            </div>
+
+            <!-- Food Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Item 1 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Authentic Italian Pasta" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-orange-600 font-bold shadow-md">$18</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif text-2xl font-bold text-gray-900">Truffle Pasta</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Handmade pasta with wild mushrooms, black truffle shavings, and parmesan cream.</p>
+                        <button class="text-orange-500 font-semibold hover:text-orange-600 flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Order Now <span class="text-lg">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Classic Cheeseburger" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-orange-600 font-bold shadow-md">$15</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif text-2xl font-bold text-gray-900">Restoval Burger</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Double beef patty, aged cheddar, caramelized onions, and our secret house sauce.</p>
+                        <button class="text-orange-500 font-semibold hover:text-orange-600 flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Order Now <span class="text-lg">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wood-fired Pizza" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-orange-600 font-bold shadow-md">$22</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif text-2xl font-bold text-gray-900">Rustic Margherita</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Wood-fired crust, San Marzano tomato sauce, fresh mozzarella, and basil leaves.</p>
+                        <button class="text-orange-500 font-semibold hover:text-orange-600 flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Order Now <span class="text-lg">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Grilled Steak" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-orange-600 font-bold shadow-md">$35</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif text-2xl font-bold text-gray-900">Prime Ribeye</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">12oz grass-fed ribeye steak, grilled to perfection, served with garlic herb butter.</p>
+                        <button class="text-orange-500 font-semibold hover:text-orange-600 flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Order Now <span class="text-lg">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fresh Summer Salad" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-orange-600 font-bold shadow-md">$14</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif text-2xl font-bold text-gray-900">Summer Bowl</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Mixed greens, avocado, cherry tomatoes, roasted seeds with a citrus vinaigrette.</p>
+                        <button class="text-orange-500 font-semibold hover:text-orange-600 flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Order Now <span class="text-lg">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gourmet Dessert" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-orange-600 font-bold shadow-md">$12</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif text-2xl font-bold text-gray-900">Orange Panna Cotta</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Silky Italian cream dessert infused with vanilla bean and fresh orange zest.</p>
+                        <button class="text-orange-500 font-semibold hover:text-orange-600 flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Order Now <span class="text-lg">→</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="#" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors">
+                    View Full Menu
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Image & Text side by side) -->
+    <section id="about" class="py-24 bg-orange-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Restaurant interior" class="rounded-3xl shadow-lg w-full h-64 object-cover mt-8">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Chef preparing food" class="rounded-3xl shadow-lg w-full h-80 object-cover">
+                    </div>
+                    <!-- Decorative orange shape -->
+                    <div class="absolute -z-10 -bottom-8 -left-8 w-64 h-64 bg-orange-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <span class="text-orange-500 font-semibold tracking-wider uppercase text-sm mb-2 block">About Restoval</span>
+                    <h2 class="font-serif text-4xl lg:text-5xl font-bold text-gray-900 mb-6">A Journey of Flavors & Aesthetics</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Founded in 2023, Restoval was born out of a passion for combining culinary art with a warm, inviting atmosphere. Our vibrant white and orange theme reflects our philosophy: clean, pure ingredients mixed with the warm, energetic zest of flavor.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Whether you are looking for a romantic dinner, a family gathering, or a quick gourmet bite, our diverse menu promises a memorable experience for every palate.
+                    </p>
+                    <div class="flex items-center gap-6">
+                        <div class="text-center">
+                            <h4 class="font-serif text-3xl font-bold text-orange-500">10+</h4>
+                            <p class="text-sm text-gray-500">Years Experience</p>
+                        </div>
+                        <div class="w-px h-12 bg-gray-300"></div>
+                        <div class="text-center">
+                            <h4 class="font-serif text-3xl font-bold text-orange-500">50+</h4>
+                            <p class="text-sm text-gray-500">Signature Dishes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Reservation Section -->
+    <section id="contact" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white rounded-[40px] shadow-2xl border border-orange-100 overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-5">
+                    
+                    <!-- Contact Info / Left Side -->
+                    <div class="lg:col-span-2 bg-orange-500 text-white p-10 lg:p-14 relative overflow-hidden">
+                        <!-- Decorative circles -->
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-orange-400 rounded-full translate-x-1/2 -translate-y-1/2 opacity-50"></div>
+                        <div class="absolute bottom-0 left-0 w-56 h-56 bg-orange-600 rounded-full -translate-x-1/2 translate-y-1/2 opacity-50"></div>
+                        
+                        <div class="relative z-10 h-full flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-serif text-3xl font-bold mb-2">Get in Touch</h3>
+                                <p class="text-orange-100 mb-10">We'd love to hear from you. Reserve a table or drop us a message!</p>
+                                
+                                <div class="space-y-6">
+                                    <div class="flex items-start gap-4">
+                                        <div class="bg-orange-400/50 p-3 rounded-full mt-1">
+                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-lg">Location</h4>
+                                            <p class="text-orange-100 text-sm">123 Culinary Avenue, Food District,<br>FD 90210, NY</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-4">
+                                        <div class="bg-orange-400/50 p-3 rounded-full mt-1">
+                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-lg">Phone</h4>
+                                            <p class="text-orange-100 text-sm">+1 (555) 123-4567</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-4">
+                                        <div class="bg-orange-400/50 p-3 rounded-full mt-1">
+                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-lg">Email</h4>
+                                            <p class="text-orange-100 text-sm">hello@restoval.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-12">
+                                <h4 class="font-semibold text-lg mb-2">Opening Hours</h4>
+                                <p class="text-orange-100 text-sm">Mon - Fri: 11:00 AM - 10:00 PM</p>
+                                <p class="text-orange-100 text-sm">Sat - Sun: 09:00 AM - 11:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form / Right Side -->
+                    <div class="lg:col-span-3 p-10 lg:p-14 bg-white">
+                        <h3 class="font-serif text-3xl font-bold text-gray-900 mb-6">Make a Reservation</h3>
+                        
+                        <form action="#" method="POST" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all" placeholder="john@example.com">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+                                    <input type="date" id="date" name="date" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all text-gray-600">
+                                </div>
+                                <div>
+                                    <label for="guests" class="block text-sm font-medium text-gray-700 mb-1">Number of Guests</label>
+                                    <select id="guests" name="guests" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all text-gray-600">
+                                        <option>2 People</option>
+                                        <option>3 People</option>
+                                        <option>4 People</option>
+                                        <option>5+ People</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Special Requests</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all resize-none" placeholder="Let us know if you have any dietary requirements..."></textarea>
+                            </div>
+
+                            <button type="button" onclick="alert('Thank you for reserving a table at Restoval. We will contact you shortly to confirm!')" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 rounded-xl shadow-lg hover:shadow-orange-500/30 transition-all transform hover:-translate-y-0.5">
+                                Book Table Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-orange-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#" class="font-serif text-3xl font-bold text-white tracking-tight mb-4 block">Restoval<span class="text-orange-500">.</span></a>
+                    <p class="text-gray-400 max-w-sm mb-6">
+                        Bringing you the finest culinary experiences with a touch of elegance and a vibrant ambiance. Your perfect dining destination.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-orange-500 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-orange-500 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-orange-500 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-orange-500 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-orange-500 transition-colors">About Us</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-orange-500 transition-colors">Menu</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-orange-500 transition-colors">Contact & Reservations</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 text-sm mb-4">Subscribe for seasonal menus and exclusive offers.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Email Address" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg focus:outline-none focus:ring-1 focus:ring-orange-500 w-full">
+                        <button class="bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded-r-lg transition-colors">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2026 Restoval Restaurant. All rights reserved.
+                </p>
+                <div class="flex space-x-4 mt-4 md:mt-0 text-sm text-gray-500">
+                    <a href="#" class="hover:text-orange-500 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-orange-500 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JS for Mobile Menu Toggle -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
